@@ -9,7 +9,7 @@
 
 
 from graphics import *
-import pygame
+#import pygame - -  commented out for review purposes 
 import time
 
 # list for player positions 
@@ -62,7 +62,7 @@ def owincriteria():
         wino()
                
 def winx():
-    pygame.mixer.Channel(1).play(pygame.mixer.Sound("win.wav"), maxtime=6000)
+    #pygame.mixer.Channel(1).play(pygame.mixer.Sound("win.wav"), maxtime=6000)
     winnerwin = GraphWin("winner!", 400,400)
     xwintext = Text(Point(200,200),"X wins! Click to start another game.")
     xwintext.draw(winnerwin)
@@ -81,7 +81,7 @@ def winx():
 
 
 def wino():
-    pygame.mixer.Channel(1).play(pygame.mixer.Sound("win.wav"), maxtime=6000)
+   # pygame.mixer.Channel(1).play(pygame.mixer.Sound("win.wav"), maxtime=6000)
     winnerwin = GraphWin("winner!", 400,400)
     owintext = Text(Point(200,200),"0 wins!")
     owintext.draw(winnerwin)
@@ -158,18 +158,12 @@ def main():
     xcell8 = ""
     xcell9 = ""
    
-# Defining the X and O image names for drawing when user selects positions "tic = X" "tac = O"
- 
-    x = "tic.png"  
-    o = "tac.png"
-   
-
 # Game sound library
 
-    pygame.init()
-    pygame.mixer.music.load("what is love 8 bit.mp3") 
-    pygame.mixer.Sound("punch.wav")
-    pygame.mixer.Sound("win.wav")
+    #pygame.init()
+    #pygame.mixer.music.load("what is love 8 bit.mp3") 
+    #pygame.mixer.Sound("punch.wav")
+    #pygame.mixer.Sound("win.wav")
    
 
 
@@ -198,8 +192,8 @@ def main():
     gamestart.draw(win)
     win.getMouse()
     gamestart.undraw()
-    pygame.mixer.music.play(2)
-    pygame.mixer.music.set_volume(0.1)
+    #pygame.mixer.music.play(2)
+    #pygame.mixer.music.set_volume(0.1)
 
   
 # turns loop. Checks click region the checks if cell is available.
@@ -225,8 +219,8 @@ def main():
         
 
         if xcord < cell1bot and xcord > cell1top and ycord > cell1left and ycord < cell1right and xcell1 == "":
-            pygame.mixer.Channel(2).play(pygame.mixer.Sound("punch.wav"), maxtime=675)
-            pic1 = Image(Point(125,125), "tic.png")
+            #pygame.mixer.Channel(2).play(pygame.mixer.Sound("punch.wav"), maxtime=675)
+            pic1 = Image(Point(125,125),"tic.png")
             pic1.draw(win)
             xcell1 = "x"
             board[0] = "x"
@@ -238,11 +232,11 @@ def main():
             errortext = Text(Point(150,150), "Cell occupied, you lose a turn!")
             errortext.draw(errorwin)
             print(xcell1)
-            pygame.mixer.Channel(1).play(pygame.mixer.Sound("denied.wav"), maxtime=2000)
+           # pygame.mixer.Channel(1).play(pygame.mixer.Sound("denied.wav"), maxtime=2000)
           
                 
         elif xcord < cell2bot and xcord > cell2top and ycord > cell2left and ycord < cell2right and xcell2 == "":
-            pygame.mixer.Channel(2).play(pygame.mixer.Sound("punch.wav"), maxtime=675)
+           # pygame.mixer.Channel(2).play(pygame.mixer.Sound("punch.wav"), maxtime=675)
             pic2 = Image(Point(300,125), "tic.png")
             pic2.draw(win)
             xcell2 = "x" 
@@ -253,10 +247,10 @@ def main():
             errorwin = GraphWin("Oops", 300,300)
             errortext = Text(Point(150,150), "Cell occupied, you lose a turn!")
             errortext.draw(errorwin)
-            pygame.mixer.Channel(1).play(pygame.mixer.Sound("denied.wav"), maxtime=2000)
+           # pygame.mixer.Channel(1).play(pygame.mixer.Sound("denied.wav"), maxtime=2000)
             
         elif xcord < cell3bot and xcord > cell3top and ycord > cell3left and ycord < cell3right and xcell3 == "":
-            pygame.mixer.Channel(2).play(pygame.mixer.Sound("punch.wav"), maxtime=675)
+           # pygame.mixer.Channel(2).play(pygame.mixer.Sound("punch.wav"), maxtime=675)
             pic3 = Image(Point(475,125), "tic.png")
             pic3.draw(win)
             xcell3 = "x"
@@ -268,11 +262,11 @@ def main():
             errorwin = GraphWin("Oops", 300,300)
             errortext = Text(Point(150,150), "Cell occupied, you lose a turn, idiot!")
             errortext.draw(errorwin)
-            pygame.mixer.Channel(1).play(pygame.mixer.Sound("denied.wav"), maxtime=2000)
+          #  pygame.mixer.Channel(1).play(pygame.mixer.Sound("denied.wav"), maxtime=2000)
             
             
         elif xcord < cell4bot and xcord > cell4top and ycord > cell4left and ycord < cell4right and xcell4 == "":
-            pygame.mixer.Channel(2).play(pygame.mixer.Sound("punch.wav"), maxtime=675)
+          #  pygame.mixer.Channel(2).play(pygame.mixer.Sound("punch.wav"), maxtime=675)
             pic4 = Image(Point(100,300), "tic.png")
             pic4.draw(win)
             xcell4 = "x" 
@@ -284,11 +278,11 @@ def main():
             errorwin = GraphWin("Oops", 300,300)
             errortext = Text(Point(150,150), "Cell occupied, you lose a turn, idiot!")
             errortext.draw(errorwin)
-            pygame.mixer.Channel(1).play(pygame.mixer.Sound("denied.wav"), maxtime=2000)
+          #  pygame.mixer.Channel(1).play(pygame.mixer.Sound("denied.wav"), maxtime=2000)
             
 
         elif xcord < cell5bot and xcord > cell5top and ycord > cell5left and ycord < cell5right and xcell5 == "":
-            pygame.mixer.Channel(2).play(pygame.mixer.Sound("punch.wav"), maxtime=675)
+         #   pygame.mixer.Channel(2).play(pygame.mixer.Sound("punch.wav"), maxtime=675)
             pic5 = Image(Point(300,300), "tic.png")
             pic5.draw(win)
             xcell5 = "x"
@@ -300,10 +294,10 @@ def main():
             errorwin = GraphWin("Oops", 300,300)
             errortext = Text(Point(150,150), "Cell occupied, you lose a turn, idiot!")
             errortext.draw(errorwin)
-            pygame.mixer.Channel(1).play(pygame.mixer.Sound("denied.wav"), maxtime=2000)
+         #   pygame.mixer.Channel(1).play(pygame.mixer.Sound("denied.wav"), maxtime=2000)
                 
         elif xcord < cell6bot and xcord > cell6top and ycord > cell6left and ycord < cell6right and xcell6 == "":
-            pygame.mixer.Channel(2).play(pygame.mixer.Sound("punch.wav"), maxtime=675)
+           # pygame.mixer.Channel(2).play(pygame.mixer.Sound("punch.wav"), maxtime=675)
             pic6 = Image(Point(500,300), "tic.png")
             pic6.draw(win)
             xcell6 = "x"
@@ -315,10 +309,10 @@ def main():
             errorwin = GraphWin("Oops", 300,300)
             errortext = Text(Point(150,150), "Cell occupied, you lose a turn, idiot!")
             errortext.draw(errorwin)
-            pygame.mixer.Channel(1).play(pygame.mixer.Sound("denied.wav"), maxtime=2000)
+          #  pygame.mixer.Channel(1).play(pygame.mixer.Sound("denied.wav"), maxtime=2000)
             
         elif xcord < cell7bot and xcord > cell7top and ycord > cell7left and ycord < cell7right and xcell7 == "":
-            pygame.mixer.Channel(2).play(pygame.mixer.Sound("punch.wav"), maxtime=675)
+         #   pygame.mixer.Channel(2).play(pygame.mixer.Sound("punch.wav"), maxtime=675)
             pic7 = Image(Point(100,500), "tic.png")
             pic7.draw(win)
             xcell7 = "x" 
@@ -330,10 +324,10 @@ def main():
             errorwin = GraphWin("Oops", 300,300)
             errortext = Text(Point(150,150), "Cell occupied, you lose a turn, idiot!")
             errortext.draw(errorwin)
-            pygame.mixer.Channel(1).play(pygame.mixer.Sound("denied.wav"), maxtime=2000)
+         #   pygame.mixer.Channel(1).play(pygame.mixer.Sound("denied.wav"), maxtime=2000)
                 
         elif xcord < cell8bot and xcord > cell8top and ycord > cell8left and ycord < cell8right and xcell8 == "":
-            pygame.mixer.Channel(2).play(pygame.mixer.Sound("punch.wav"), maxtime=675)
+         #   pygame.mixer.Channel(2).play(pygame.mixer.Sound("punch.wav"), maxtime=675)
             pic8 = Image(Point(300,500), "tic.png")
             pic8.draw(win)
             xcell8 = "x"
@@ -345,10 +339,10 @@ def main():
             errorwin = GraphWin("Oops", 300,300)
             errortext = Text(Point(150,150), "Cell occupied, you lose a turn, idiot!")
             errortext.draw(errorwin)
-            pygame.mixer.Channel(1).play(pygame.mixer.Sound("denied.wav"), maxtime=2000)
+         #   pygame.mixer.Channel(1).play(pygame.mixer.Sound("denied.wav"), maxtime=2000)
                 
         elif xcord < cell9bot and xcord > cell9top and ycord > cell9left and ycord < cell9right and xcell9 == "":
-            pygame.mixer.Channel(2).play(pygame.mixer.Sound("punch.wav"), maxtime=675)
+         #   pygame.mixer.Channel(2).play(pygame.mixer.Sound("punch.wav"), maxtime=675)
             pic9 = Image(Point(500,500), "tic.png")
             pic9.draw(win)
             xcell9 = "x" 
@@ -360,7 +354,7 @@ def main():
             errorwin = GraphWin("Oops", 300,300)
             errortext = Text(Point(150,150), "Cell occupied, you lose a turn, idiot!")
             errortext.draw(errorwin)
-            pygame.mixer.Channel(1).play(pygame.mixer.Sound("denied.wav"), maxtime=2000)
+        #    pygame.mixer.Channel(1).play(pygame.mixer.Sound("denied.wav"), maxtime=2000)
 
 # checks win criteria 
 # undraw players turn text
@@ -384,7 +378,7 @@ def main():
 
 
         if xcord < cell1bot and xcord > cell1top and ycord > cell1left and ycord < cell1right and xcell1 == "":
-            pygame.mixer.Channel(2).play(pygame.mixer.Sound("punch.wav"), maxtime=675)
+        #    pygame.mixer.Channel(2).play(pygame.mixer.Sound("punch.wav"), maxtime=675)
             pic1 = Image(Point(100,100), "tac.png")
             pic1.draw(win)
             xcell1 = "o"
@@ -396,11 +390,11 @@ def main():
             errorwin = GraphWin("Oops", 300,300)
             errortext = Text(Point(150,150), "Cell occupied, you lose a turn, idiot!")
             errortext.draw(errorwin)
-            pygame.mixer.Channel(1).play(pygame.mixer.Sound("denied.wav"), maxtime=2000)
+          #  pygame.mixer.Channel(1).play(pygame.mixer.Sound("denied.wav"), maxtime=2000)
 
              
         elif xcord < cell2bot and xcord > cell2top and ycord > cell2left and ycord < cell2right and xcell2 == "":
-            pygame.mixer.Channel(2).play(pygame.mixer.Sound("punch.wav"), maxtime=675)
+          #  pygame.mixer.Channel(2).play(pygame.mixer.Sound("punch.wav"), maxtime=675)
             pic2 = Image(Point(300,100), "tac.png")
             pic2.draw(win)
             xcell2 = "o" 
@@ -411,11 +405,11 @@ def main():
             errorwin = GraphWin("Oops", 300,300)
             errortext = Text(Point(150,150), "Cell occupied, you lose a turn, idiot!")
             errortext.draw(errorwin)
-            pygame.mixer.Channel(1).play(pygame.mixer.Sound("denied.wav"), maxtime=2000)
+          #  pygame.mixer.Channel(1).play(pygame.mixer.Sound("denied.wav"), maxtime=2000)
             
             
         elif xcord < cell3bot and xcord > cell3top and ycord > cell3left and ycord < cell3right and xcell3 == "":
-            pygame.mixer.Channel(2).play(pygame.mixer.Sound("punch.wav"), maxtime=675)
+         #   pygame.mixer.Channel(2).play(pygame.mixer.Sound("punch.wav"), maxtime=675)
             pic3 = Image(Point(500,100), "tac.png")
             pic3.draw(win)
             xcell3 = "o" 
@@ -426,10 +420,10 @@ def main():
             errorwin = GraphWin("Oops", 300,300)
             errortext = Text(Point(150,150), "Cell occupied, you lose a turn, idiot!")
             errortext.draw(errorwin)
-            pygame.mixer.Channel(1).play(pygame.mixer.Sound("denied.wav"), maxtime=2000)
+         #   pygame.mixer.Channel(1).play(pygame.mixer.Sound("denied.wav"), maxtime=2000)
             
         elif xcord < cell4bot and xcord > cell4top and ycord > cell4left and ycord < cell4right and xcell4 == "":
-            pygame.mixer.Channel(2).play(pygame.mixer.Sound("punch.wav"), maxtime=675)
+          #  pygame.mixer.Channel(2).play(pygame.mixer.Sound("punch.wav"), maxtime=675)
             pic4 = Image(Point(100,300), "tac.png")
             pic4.draw(win)
             xcell4 = "o" 
@@ -440,10 +434,10 @@ def main():
             errorwin = GraphWin("Oops", 300,300)
             errortext = Text(Point(150,150), "Cell occupied, you lose a turn, idiot!")
             errortext.draw(errorwin)
-            pygame.mixer.Channel(1).play(pygame.mixer.Sound("denied.wav"), maxtime=2000)
+        #    pygame.mixer.Channel(1).play(pygame.mixer.Sound("denied.wav"), maxtime=2000)
 
         elif xcord < cell5bot and xcord > cell5top and ycord > cell5left and ycord < cell5right and xcell5 == "":
-            pygame.mixer.Channel(2).play(pygame.mixer.Sound("punch.wav"), maxtime=675)
+         #   pygame.mixer.Channel(2).play(pygame.mixer.Sound("punch.wav"), maxtime=675)
             pic5 = Image(Point(300,300), "tac.png")
             pic5.draw(win)
             xcell5 = "o" 
@@ -454,10 +448,10 @@ def main():
             errorwin = GraphWin("Oops", 300,300)
             errortext = Text(Point(150,150), "Cell occupied, you lose a turn, idiot!")
             errortext.draw(errorwin)
-            pygame.mixer.Channel(1).play(pygame.mixer.Sound("denied.wav"), maxtime=2000)
+         #   pygame.mixer.Channel(1).play(pygame.mixer.Sound("denied.wav"), maxtime=2000)
                 
         elif xcord < cell6bot and xcord > cell6top and ycord > cell6left and ycord < cell6right and xcell6 == "":
-            pygame.mixer.Channel(2).play(pygame.mixer.Sound("punch.wav"), maxtime=675)
+         #   pygame.mixer.Channel(2).play(pygame.mixer.Sound("punch.wav"), maxtime=675)
             pic6 = Image(Point(500,300), "tac.png")
             pic6.draw(win)
             xcell6 = "o" 
@@ -468,10 +462,10 @@ def main():
             errorwin = GraphWin("Oops", 300,300)
             errortext = Text(Point(150,150), "Cell occupied, you lose a turn, idiot!")
             errortext.draw(errorwin)
-            pygame.mixer.Channel(1).play(pygame.mixer.Sound("denied.wav"), maxtime=2000)
+         #   pygame.mixer.Channel(1).play(pygame.mixer.Sound("denied.wav"), maxtime=2000)
             
         elif xcord < cell7bot and xcord > cell7top and ycord > cell7left and ycord < cell7right and xcell7 == "":
-            pygame.mixer.Channel(2).play(pygame.mixer.Sound("punch.wav"), maxtime=675)
+         #   pygame.mixer.Channel(2).play(pygame.mixer.Sound("punch.wav"), maxtime=675)
             pic7 = Image(Point(100,500), "tac.png")
             pic7.draw(win)
             xcell7 = "o" 
@@ -482,10 +476,10 @@ def main():
             errorwin = GraphWin("Oops", 300,300)
             errortext = Text(Point(150,150), "Cell occupied, you lose a turn, idiot!")
             errortext.draw(errorwin)
-            pygame.mixer.Channel(1).play(pygame.mixer.Sound("denied.wav"), maxtime=2000)
+         #   pygame.mixer.Channel(1).play(pygame.mixer.Sound("denied.wav"), maxtime=2000)
                 
         elif xcord < cell8bot and xcord > cell8top and ycord > cell8left and ycord < cell8right and xcell8 == "":
-            pygame.mixer.Channel(2).play(pygame.mixer.Sound("punch.wav"), maxtime=675)
+         #   pygame.mixer.Channel(2).play(pygame.mixer.Sound("punch.wav"), maxtime=675)
             pic8 = Image(Point(300,500), "tac.png")
             pic8.draw(win)
             xcell8 = "o" 
@@ -496,7 +490,7 @@ def main():
             errorwin = GraphWin("Oops", 300,300)
             errortext = Text(Point(150,150), "Cell occupied, you lose a turn, idiot!")
             errortext.draw(errorwin)
-            pygame.mixer.Channel(1).play(pygame.mixer.Sound("denied.wav"), maxtime=2000)
+         #   pygame.mixer.Channel(1).play(pygame.mixer.Sound("denied.wav"), maxtime=2000)
                 
         elif xcord < cell9bot and xcord > cell9top and ycord > cell9left and ycord < cell9right and xcell9 == "":
             pygame.mixer.Channel(2).play(pygame.mixer.Sound("punch.wav"), maxtime=675)
@@ -510,7 +504,7 @@ def main():
             errorwin = GraphWin("Oops", 300,300)
             errortext = Text(Point(150,150), "Cell occupied, you lose a turn, idiot!")
             errortext.draw(errorwin)
-            pygame.mixer.Channel(1).play(pygame.mixer.Sound("denied.wav"), maxtime=2000)
+         #   pygame.mixer.Channel(1).play(pygame.mixer.Sound("denied.wav"), maxtime=2000)
 
 # checks win criteria 
 # undraw players turn text
