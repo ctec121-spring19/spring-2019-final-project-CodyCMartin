@@ -4,6 +4,10 @@
 
 import Controller
 
+
 def main():
-    # delete and enter your code here
-    pass
+
+    Controller()
+
+main()
+    

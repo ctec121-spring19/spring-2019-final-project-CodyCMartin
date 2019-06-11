@@ -2,14 +2,17 @@
 #
 # For TicTacToe
 
-import View
+import View as Vw
 import Model
 
 class Controller:
 
     def __init__(self):
-        # delete and enter your code here
-        pass
+        mainview = Vw()
+        print(Vw)
+
+        
+
 
 def ControllerTest():
     # delete and enter your code here

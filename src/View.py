@@ -7,12 +7,54 @@ from graphics import *
 class View:
 
     def __init__(self):
-        # delete and enter your code here
-        pass
+        # Window creation
+        self._win = GraphWin("Tic Tac Toe", 600,600)
+
+        # Grid line creation
+        Line(Point(200,50),Point(200,550)).draw(self._win)
+        Line(Point(400,50),Point(400,550)).draw(self._win)
+        Line(Point(50,200),Point(550,200)).draw(self._win)
+        Line(Point(50,400),Point(550,400)).draw(self._win)
+        topText = Text(Point(300,25),"Tic Tac Toe")
+        topText.setStyle("bold")
+        topText.setSize(18)
+        topText.draw(self._win)
+ 
+        
+     # function to return coords when clicked
+    def getClick(self):
+        point = self._win.getMouse()        
+        return(point.getX(), point.getY())
+
+        
+    # function to draw player image in cell on board
+    def drawPlayer(self):
+        playerX = Image(Point(125,125),"tic.png").draw(self._win)
+
+    # this text shows before the start of each game 
+    def startText(self):
+        starter = Text(Point(300,575),"Click to start a game.")
+        starter.setSize(18)
+        starter.setStyle("bold")
+        starter.draw(self._win)
+        
+
+
+
+       
 
 def ViewTest():
-    # delete and enter your code here
-    pass
     
-if __name__ == "__main__":
-    ViewTest()
+
+  
+
+
+
+
+
+
+   
+   
+#if __name__ == "__main__":
+#    ViewTest()
+
