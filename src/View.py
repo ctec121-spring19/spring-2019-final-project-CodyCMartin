@@ -34,6 +34,30 @@ class View:
         starter.setStyle("bold")
         starter.draw(self._win)
 
+    # text at bottom of screen to notify player x thats its their turn
+    def playerX_Turn(self):
+        playerX = Text(Point(300,575),"Player X's turn! ")
+        playerX.setSize(18)
+        playerX.setStyle("bold")
+        playerX.draw(self._win)
+
+    # text at bottom of screen to notify player x thats its their turn
+    def playerO_Turn(self):
+        playerO = Text(Point(300,575),"Player O's turn! ")
+        playerO.setSize(18)
+        playerO.setStyle("bold")
+        playerO.draw(self._win)
+
+    # Error message to pop up when a player picks a cell thats already populated
+    def cellTaken(self):
+        cellTaken = Text(Point(300,575),"Cell already taken!")
+        cellTaken.setSize(18)
+        cellTaken.setStyle("bold")
+        cellTaken.draw(self._win)
+        
+
+
+
 
 
               
@@ -42,6 +66,11 @@ def viewTest():
     v = View()
     v.startText()
     v.getClick()
+    v.playerO_Turn()
+    v.playerX_Turn()
+    v.cellTaken()
+    
+
 
 
 
