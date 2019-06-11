@@ -8,8 +8,10 @@ import Model
 class Controller:
 
     def __init__(self):
-        mainview = Vw()
-        print(Vw)
+        main = View()
+        main.getClick()
+
+        
 
         
 
