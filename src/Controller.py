@@ -8,12 +8,28 @@ from Model import Model
 class Controller:
 
     def __init__(self):
-        self._v = View()
-        self._v.startText("Click to start a game!")
-        self._v.getClick()
-        self._v.startText("Player X's turn!")
-        self._v.getClick()
+        self._model = Model()
+        self._view = View()
+        self._view.startText("Click to start a game!")
+        self._view.getClick()
+        self._view.startText("Player X's turn!")
+        
 
+
+    def cellReport(self):
+
+        # Defining the click recieved from view
+        cells = self._view.getClick()
+
+        # Sending the click to be varified and housed to model
+        self._model.cellSelection(cells)
+
+        # Defining the return value of the varification from model 
+        cellSelect = self._model.cellSelection()
+
+        # proving the connections are working properly 
+        if cellSelect == True:
+            print("working")
         
 
         # Call view to draw window and grid
@@ -28,16 +44,11 @@ class Controller:
         # if empty, tell draw to draw player symbol into cell
         
 
-        
-
-        
-
-
+    
 def ControllerTest():
     c = Controller()
-    input()
-    
-    
+    c.cellReport("cell1")
+        
 
 if __name__ == "__main__":
     ControllerTest()
