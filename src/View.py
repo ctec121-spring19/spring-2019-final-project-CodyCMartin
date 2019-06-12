@@ -4,6 +4,8 @@
 
 from graphics import *
 
+
+# View class creation
 class View:
 
     def __init__(self):
@@ -17,10 +19,17 @@ class View:
         Line(Point(50,400),Point(550,400)).draw(self._win)
 
         # Top text "tic tac toe"
-        topText = Text(Point(300,25),"Tic Tac Toe")
-        topText.setStyle("bold")
-        topText.setSize(18)
-        topText.draw(self._win)
+        self.topText = Text(Point(300,25),"Tic Tac Toe")
+        self.topText.setStyle("bold")
+        self.topText.setSize(18)
+        self.topText.draw(self._win)
+
+        # Bottom text formatting and location 
+        self.bottomText = Text(Point(300,575),"")
+        self.bottomText.setStyle("bold")
+        self.bottomText.setSize(18)
+        self.bottomText.draw(self._win)
+        
         
     # function to return coords when clicked
     def getClick(self):
@@ -28,56 +37,19 @@ class View:
         return(point.getX(), point.getY())
 
     # this text shows before the start of each game 
-    def startText(self):
-        starter = Text(Point(300,575),"Click to start a game.")
-        starter.setSize(18)
-        starter.setStyle("bold")
-        starter.draw(self._win)
-
-    # text at bottom of screen to notify player x thats its their turn
-    def playerX_Turn(self):
-        playerX = Text(Point(300,575),"Player X's turn! ")
-        playerX.setSize(18)
-        playerX.setStyle("bold")
-        playerX.draw(self._win)
-
-    # text at bottom of screen to notify player x thats its their turn
-    def playerO_Turn(self):
-        playerO = Text(Point(300,575),"Player O's turn! ")
-        playerO.setSize(18)
-        playerO.setStyle("bold")
-        playerO.draw(self._win)
-
-    # Error message to pop up when a player picks a cell thats already populated
-    def cellTaken(self):
-        cellTaken = Text(Point(300,575),"Cell already taken!")
-        cellTaken.setSize(18)
-        cellTaken.setStyle("bold")
-        cellTaken.draw(self._win)
+    def startText(self, message):
+        self.bottomText.setText(message)
         
-
-
-
-
-
-              
+                  
 # View test
-def viewTest():
+def ViewTest():
     v = View()
-    v.startText()
+    v.startText("test")
     v.getClick()
-    v.playerO_Turn()
-    v.playerX_Turn()
-    v.cellTaken()
+    print(v.getClick())
+   
     
-
-
-
-
-viewTest()
-
    
-   
-#if __name__ == "__main__":
-#    ViewTest()
+if __name__ == "__main__":
+    ViewTest()
 

@@ -2,16 +2,31 @@
 #
 # For TicTacToe
 
-import View
+from View import View
 
 class Model:
 
-    def __init__(self):
-        # delete and enter your code here
-        pass
+    def __init__(self, view):
+        self._v = view
+        
+    
+
+       
+    pass
+
+
+
+
+
+
+
+
+
+
 
 def ModelTest():
-    # delete and enter your code here
+    m = Model()
+    
     pass
 
 if __name__ == "__main__":

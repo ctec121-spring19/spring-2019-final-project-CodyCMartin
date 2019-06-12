@@ -2,12 +2,26 @@
 #
 # For TicTacToe
 
-import View as Vw
-import Model
+from View import View
+from Model import Model
 
 class Controller:
 
     def __init__(self):
+        self._v = View()
+        self._v.startText("Click to start a game!")
+        self._v.getClick()
+        self._v.startText("Player X's turn!")
+        self._v.getClick()
+
+
+        
+
+
+    
+        
+        
+
         # Call view to draw window and grid
         # Call view to draw start game text
         # Call view to get click for start of game
@@ -26,8 +40,10 @@ class Controller:
 
 
 def ControllerTest():
-    # delete and enter your code here
-    pass
+    c = Controller()
+    input()
+    
+    
 
 if __name__ == "__main__":
     ControllerTest()
