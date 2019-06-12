@@ -31,16 +31,34 @@ class View:
         self.bottomText.setSize(18)
         self.bottomText.draw(self._win)
         
-        
-    # function to return coords when clicked
+    # function to return coords as ints when clicked then send cell location to model
     def getClick(self):
         point = self._win.getMouse()        
-        return int(point.getX()), int(point.getY())
+        pX = int(point.getX())
+        pY = int(point.getY())
 
-    # this text shows before the start of each game 
+        if pX == 0 and pY == 0:
+            return "cell1"
+        if pX == 1 and pY == 0:
+            return "cell2"
+        if pX == 2 and pY == 0:
+            return "cell3"
+        if pX == 0 and pY == 1:
+            return "cell4"
+        if pX == 1 and pY == 1:
+            return "cell5"
+        if pX == 2 and pY == 1:
+            return "cell6"
+        if pX == 0 and pY == 2:
+            return "cell7"
+        if pX == 1 and pY == 2:
+            return "cell8"
+        if pX == 2 and pY == 2:
+            return "cell9"
+
+    # this text is located at the bottom of the window and informs players of whos turn it is 
     def startText(self, message):
         self.bottomText.setText(message)
-        
                   
 # View test
 def ViewTest():

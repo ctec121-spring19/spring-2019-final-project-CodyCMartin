@@ -14,12 +14,6 @@ class Controller:
         self._v.startText("Player X's turn!")
         self._v.getClick()
 
-
-        
-
-
-    
-        
         
 
         # Call view to draw window and grid

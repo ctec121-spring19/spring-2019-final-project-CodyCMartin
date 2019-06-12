@@ -6,19 +6,29 @@ from View import View
 
 class Model:
 
-    def __init__(self, view):
-        self._v = view
+    def __init__(self):
+        self._v = View()
+        self._v.getClick()
         
+
+
+
+
+
+
+def cellSelection():
+    
+    board = ["","","",
+         "","",""
+         "","","", ""]
+
+    _v.getClick()
+
+
+
     
 
-       
-    pass
-
-
-
-
-
-
+    
 
 
 
@@ -26,6 +36,9 @@ class Model:
 
 def ModelTest():
     m = Model()
+    cellSelection()
+    
+    
     
     pass
 
