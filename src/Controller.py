@@ -18,13 +18,13 @@ class Controller:
 
     def cellReport(self):
 
-        # Defining the click recieved from view
+        # Defining the click recieved from view to a local variable
         cells = self._view.getClick()
 
         # Sending the click to be varified and housed to model
         self._model.cellSelection(cells)
 
-        # Defining the return value of the varification from model 
+        # Defining the return value of the varification from model to a local variable
         cellSelect = self._model.cellSelection()
 
         # proving the connections are working properly 
