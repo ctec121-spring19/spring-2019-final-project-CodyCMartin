@@ -32,7 +32,7 @@ class View:
         self.bottomText.draw(self._win)
 
         # Symbol text
-        self.symbol = Text(Point(1.5,2), "")
+        self.symbol = Text(Point(1.5,1.5), "")
         self.symbol.setStyle("bold")
         self.symbol.setSize(24)
         self.symbol.draw(self._win)        

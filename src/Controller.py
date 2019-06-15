@@ -20,9 +20,14 @@ class Controller:
         m.cellSelectionX(v.getClick())
         print(selectionX)
         if selectionX == False:
-            v.startText("Pick another cell")
+            v.startText("Cell populated. You lose a turn")
         v.drawSymbol("PlayerX")
         v.startText("Player O's Turn")
+        m.cellSelectionO(v.getClick())
+        print(selectionO)
+        if selectionO == False:
+            v.startText("Cell populated. You lose a turn")
+        v.drawSymbol("PlayerO")
 
 
 
