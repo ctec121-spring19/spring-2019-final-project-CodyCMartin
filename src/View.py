@@ -30,6 +30,12 @@ class View:
         self.bottomText.setStyle("bold")
         self.bottomText.setSize(18)
         self.bottomText.draw(self._win)
+
+        # Symbol text
+        self.symbol = Text(Point(1.5,2), "")
+        self.symbol.setStyle("bold")
+        self.symbol.setSize(24)
+        self.symbol.draw(self._win)        
         
     # function to return coords as ints when clicked then send cell location to model
     def getClick(self):
@@ -59,6 +65,16 @@ class View:
     # this text is located at the bottom of the window and informs players of whos turn it is 
     def startText(self, message):
         self.bottomText.setText(message)
+
+    def drawSymbol(self, symbol):
+        if symbol == "PlayerX":
+            self.symbol.setText("X")
+        elif symbol == "PlayerO":
+            self.symbol.setText("O")
+
+    
+    
+
                   
 # View test
 def ViewTest():
@@ -66,6 +82,8 @@ def ViewTest():
     v.startText("test")
     v.getClick()
     print(v.getClick())
+    v.drawSymbol("PlayerX")
+    input()
    
     
    
