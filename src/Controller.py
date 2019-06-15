@@ -2,8 +2,8 @@
 #
 # For TicTacToe
 
-from View import View
-from Model import Model 
+from View import *
+from Model import *
 
 class Controller:
 
@@ -11,23 +11,27 @@ class Controller:
        
         v = View()
         m = Model()
+        click = v.getClick
         selectionX = m.cellSelectionX(v.getClick())
-        selectionO = m.cellSelectionO(v.getClick())
-        
-        
+       
 
+        
         v.startText("Player X's turn")
-        m.cellSelectionX(v.getClick())
+        m.cellSelectionX(click)
         print(selectionX)
         if selectionX == False:
             v.startText("Cell populated. You lose a turn")
         v.drawSymbol("PlayerX")
-        v.startText("Player O's Turn")
-        m.cellSelectionO(v.getClick())
-        print(selectionO)
-        if selectionO == False:
-            v.startText("Cell populated. You lose a turn")
-        v.drawSymbol("PlayerO")
+
+        
+
+
+          
+            
+        
+      
+      
+        
 
 
 
@@ -35,25 +39,10 @@ class Controller:
 
     
         
-        
-
-
-
     
         
-    
-    
 
-        
       
-        
-       
-        
-
-    
-
-   
-        
 
     
 def ControllerTest():
