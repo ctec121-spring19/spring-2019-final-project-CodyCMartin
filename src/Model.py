@@ -76,6 +76,7 @@ class Model:
         elif cell == "cell9" and board[9] != "":
             return False
         
+        
 
 
 

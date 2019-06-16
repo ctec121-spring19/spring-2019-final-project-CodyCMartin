@@ -26,7 +26,7 @@ class View:
         self.topText.draw(self._win)
 
         # Bottom text formatting and location 
-        self.bottomText = Text(Point(1.5,.12),"")
+        self.bottomText = Text(Point(1.5,.12),"Player X's turn")
         self.bottomText.setStyle("bold")
         self.bottomText.setSize(18)
         self.bottomText.draw(self._win)
@@ -45,21 +45,21 @@ class View:
 
         if pX == 0 and pY == 0:
             return "cell1"
-        if pX == 1 and pY == 0:
+        elif pX == 1 and pY == 0:
             return "cell2"
-        if pX == 2 and pY == 0:
+        elif pX == 2 and pY == 0:
             return "cell3"
-        if pX == 0 and pY == 1:
+        elif pX == 0 and pY == 1:
             return "cell4"
-        if pX == 1 and pY == 1:
+        elif pX == 1 and pY == 1:
             return "cell5"
-        if pX == 2 and pY == 1:
+        elif pX == 2 and pY == 1:
             return "cell6"
-        if pX == 0 and pY == 2:
+        elif pX == 0 and pY == 2:
             return "cell7"
-        if pX == 1 and pY == 2:
+        elif pX == 1 and pY == 2:
             return "cell8"
-        if pX == 2 and pY == 2:
+        elif pX == 2 and pY == 2:
             return "cell9"
 
     # this text is located at the bottom of the window and informs players of whos turn it is 
