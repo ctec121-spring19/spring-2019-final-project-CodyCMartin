@@ -12,7 +12,7 @@ class Controller:
         v = View()
         m = Model()
         click = v.getClick
-        selectionX = m.cellSelectionX(click)
+        selectionX = m.cellSelectionX(v.getClick() # think this is breaking it only one selection 
         player1Turn = True
         player2Turn = True
         game = True
