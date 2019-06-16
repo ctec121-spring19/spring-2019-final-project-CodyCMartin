@@ -12,18 +12,23 @@ class Controller:
         v = View()
         m = Model()
         click = v.getClick
-        selectionX = m.cellSelectionX(v.getClick())
+        selectionX = m.cellSelectionX(click)
         player1Turn = True
         player2Turn = True
         game = True
        
+
+        # main game loop. game value to be changed upon win or draw to exit
         while game == True:
-            if player1Turn == True:
+
+            # player turn loops
+
+            if selectionX == False:
+                v.startText("Cell populated. You lose a turn")
+            elif player1Turn == True:
                 v.startText("Player X's turn")
                 m.cellSelectionX(click)
                 print(click)
-            elif selectionX == False:
-                v.startText("Cell populated. You lose a turn")
             v.drawSymbol("PlayerX")
             player2Turn == True
             player1Turn == False
@@ -43,11 +48,7 @@ class Controller:
 
 
           
-            
-        
-      
-      
-
+    
       
 
     

@@ -77,16 +77,16 @@ class View:
 
                   
 # View test
-def ViewTest():
-    v = View()
-    v.startText("test")
-    v.getClick()
-    print(v.getClick())
-    v.drawSymbol("PlayerX")
-    input()
+#def ViewTest():
+    #v = View()
+    #v.startText("test")
+    #v.getClick()
+    #print(v.getClick())
+    #v.drawSymbol("PlayerX")
+   # input()
    
     
    
-if __name__ == "__main__":
-    ViewTest()
+#if __name__ == "__main__":
+  #  ViewTest()
 
